@@ -14,7 +14,7 @@ class bugunNeYesem extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.white,
           title: Text(
-            'Bugün Ne Yesem?',
+            'İstenci Esnaf Lokantası',
             style: TextStyle(color: Colors.black),
           ),
           centerTitle: true,
@@ -29,12 +29,64 @@ class yemekSayfasi extends StatelessWidget {
   const yemekSayfasi({super.key});
   @override
   Widget build(BuildContext context) {
+    int corbaNo = 1;
+    int yemekNo = 1;
+    int tatliNo = 1;
+
     return Center(
       child: Column(
         children: [
-          Expanded(child: Image.asset('assets/corba_1.jpg')),
-          Expanded(child: Image.asset('assets/yemek_1.jpg')),
-          Expanded(child: Image.asset('assets/tatli_1.jpg')),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(22.0),
+              child: TextButton(
+                style: ButtonStyle(
+                  overlayColor:
+                      MaterialStateColor.resolveWith((states) => Colors.blue),
+                  backgroundColor:
+                      MaterialStateColor.resolveWith((states) => Colors.yellow),
+                ),
+                onPressed: () {
+                  print('$corbaNo Numaralı Çorba Aktif Edildi');
+                },
+                child: Image.asset('assets/corba_$corbaNo.jpg'),
+              ),
+            ),
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(22.0),
+              child: TextButton(
+                style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateColor.resolveWith((states) => Colors.red),
+                  overlayColor:
+                      MaterialStateColor.resolveWith((states) => Colors.blue),
+                ),
+                onPressed: () {
+                  print('$yemekNo Numaralı Yemek Aktif Edildi');
+                },
+                child: Image.asset('assets/yemek_$yemekNo.jpg'),
+              ),
+            ),
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(22.0),
+              child: TextButton(
+                style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateColor.resolveWith((states) => Colors.green),
+                  overlayColor:
+                      MaterialStateColor.resolveWith((states) => Colors.blue),
+                ),
+                onPressed: () {
+                  print('$tatliNo Numaralı Tatlı Aktif Edildi');
+                },
+                child: Image.asset('assets/tatli_$tatliNo.jpg'),
+              ),
+            ),
+          ),
         ],
       ),
     );
