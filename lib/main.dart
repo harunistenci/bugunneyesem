@@ -19,14 +19,20 @@ class bugunNeYesem extends StatelessWidget {
           ),
           centerTitle: true,
         ),
-        body: yemekSayfasi(),
+        body: YemekSayfasi(),
       ),
     );
   }
 }
 
-class yemekSayfasi extends StatelessWidget {
-  const yemekSayfasi({super.key});
+class YemekSayfasi extends StatefulWidget {
+  const YemekSayfasi({super.key});
+
+  @override
+  State<YemekSayfasi> createState() => _YemekSayfasiState();
+}
+
+class _YemekSayfasiState extends State<YemekSayfasi> {
   @override
   Widget build(BuildContext context) {
     int corbaNo = 1;
